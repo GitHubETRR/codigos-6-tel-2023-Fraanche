@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+union 
+{
+  float valor;
+  unsigned char posicion[4];
+}conversion;
+
+int main()
+{
+  printf("Ingrese el numero que quiere pasar a hexa: \n");
+  scanf("%f", &conversion.valor);
+  printf("0x%x%x%x%x", conversion.posicion[3], conversion.posicion[2], conversion.posicion[1], conversion.posicion[0]);
+
+  return 0;
+}
