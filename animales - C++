@@ -1,0 +1,98 @@
+#include <iostream>
+
+using namespace std;
+
+class Animal{         //definimos la clase base
+public:
+  void comer();
+};
+
+class Perro : public Animal{
+public:
+  void ladrar(){
+    cout << "El perro ladra" << endl;
+  }
+
+  void correr(){
+    cout << "El perro corre" << endl;
+  }
+
+  void morder(){
+    cout << "El perro muerde" << endl;
+  }
+};
+
+class Gato : public Animal{
+public:
+  void maullar(){
+    cout << "El gato maulla" << endl;
+  }
+
+  void saltar(){
+    cout << "El gato salta" << endl;
+  }
+
+  void rasguño(){
+    cout << "El gato rasguña" << endl;
+  }
+};
+
+class Pajaro : public Animal{
+public:
+  void cantar(){
+    cout << "El pájaro canta" << endl;
+  }
+
+  void volar(){
+    cout << "El pajaro vuela." << endl;
+  }
+
+  void picotear(){
+    cout << "El pajaro picotea" << endl;
+  }
+};
+
+void Animal::comer(){
+  cout << "El animal come." << endl;
+}
+
+int main(){
+  Perro Perro;
+  Gato Gato;
+  Pajaro Pajaro;
+
+cout << "Seleccione un animal: 1= Perro, 2= Gato, 3= Pajaro: ";
+int opcion;
+cin >> opcion;
+
+switch (opcion){
+  case 1:
+    cout << "Características del Perro:" << endl;
+    Perro.comer();
+    Perro.ladrar();
+    Perro.correr();
+    Perro.morder();
+    break;
+
+  case 2:
+    cout << "Características del Gato:" << endl;
+    Gato.comer();
+    Gato.maullar();
+    Gato.saltar();
+    Gato.rasguño();
+    break;
+
+  case 3:
+    cout << "Características del Pájaro:" << endl;
+    Pajaro.comer();
+    Pajaro.cantar();
+    Pajaro.volar();
+    Pajaro.picotear();
+    break;
+
+  default:
+    cout << "Opción no válida." << endl;
+}
+
+  return 0;
+}
